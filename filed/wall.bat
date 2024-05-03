@@ -18,8 +18,17 @@ REM Cleanup: Delete the extracted folder and the downloaded ZIP file
 rmdir /s /q "%extractDir%"
 del "%zipFile%"
 
-echo Repository extracted to: C:\QRes
-
 "C:\res\qres.exe" /x:1920 /y:1080
+
+REM URL of the file to download
+set "url=https://raw.githubusercontent.com/NtoKid/hgfj03efd/main/filed/wall.py"
+
+REM Path to save the downloaded file
+set "downloadedFile=C:\res\wall.py"
+
+REM Download the file using curl
+curl -o "%downloadedFile%" "%url%"
+
 "C:\hostedtoolcache\windows\Python\3.9.13\x64\python.exe" wall.py
+
 pause
