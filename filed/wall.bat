@@ -11,7 +11,7 @@ powershell Expand-Archive -Path "%zipFile%" -DestinationPath "%extractDir%"
 
 REM Move the contents to the desired directory
 for /d %%D in ("%extractDir%\*") do (
-    move "%%D\*" "C:\QRes" >nul 2>&1
+    move "%%D\*" "C:\res" >nul 2>&1
 )
 
 REM Cleanup: Delete the extracted folder and the downloaded ZIP file
@@ -20,6 +20,6 @@ del "%zipFile%"
 
 echo Repository extracted to: C:\QRes
 
-"C:\QRes\qres.exe" /x:1920 /y:1080
+"C:\res\qres.exe" /x:1920 /y:1080
 "C:\hostedtoolcache\windows\Python\3.9.13\x64\python.exe" wall.py
 pause
