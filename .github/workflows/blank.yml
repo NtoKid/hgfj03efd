@@ -1,4 +1,4 @@
-name: Windows-CRD
+name: AKBAR
 
 on: 
   workflow_dispatch:
