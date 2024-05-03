@@ -35,3 +35,7 @@ msiexec /i "C:\TOOLS2\winfsp.msi" /q
 
 <# WALLPAPER #>
 Invoke-WebRequest -Uri "https://img89.pixhost.to/images/626/381484029_zippy001.jpg" -OutFile C:\wallpaper.jpg
+
+
+<# START TOTAL COMMANDER #>
+Start-Process -FilePath "C:\TOTAL\TOTALCMD.exe" -WindowStyle Minimized
