@@ -28,6 +28,10 @@ Invoke-WebRequest -Uri "https://www.dropbox.com/s/v8stvajyo3jmjz7/Total.bat?dl=1
 Invoke-WebRequest -Uri "https://www.dropbox.com/s/28oxq06myogvu87/RAR.zip?dl=1" -OutFile C:\down\RAR.zip
 Expand-Archive -LiteralPath 'C:\down\RAR.zip' -DestinationPath c:\K\WORK\
 
+<# SHELL INSTALLS #>
+pip install tqdm
+pip install requests
+pip install requests pillow
 
 <# INSTALL WINSFP#>
 msiexec /i "C:\TOOLS2\winfsp.msi" /q
