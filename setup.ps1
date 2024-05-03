@@ -1,10 +1,10 @@
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 & {$P = $env:TEMP + '\chromeremotedesktophost.msi'; Invoke-WebRequest 'https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi' -OutFile $P; Start-Process $P -Wait; Remove-Item $P}
-& {$P = $env:TEMP + '\chrome_installer.exe'; Invoke-WebRequest 'https://dl.google.com/chrome/install/latest/chrome_installer.exe' -OutFile $P; Start-Process -FilePath $P -Args '/install' -Verb RunAs -Wait; Remove-Item $P}
 
 
 New-Item -ItemType "directory" -Force -Path "c:\down"
 New-Item -ItemType "directory" -Force -Path "c:\rclone"
+New-Item -ItemType "directory" -Force -Path "c:\res"
 New-Item -ItemType "directory" -Force -Path "c:\TOOLS2"
 New-Item -ItemType "directory" -Force -Path "C:\Users\runneradmin\AppData\Roaming\GHISLER\"
 New-Item -ItemType "directory" -Force -Path "c:\rclone\UPLOAD"
@@ -36,5 +36,13 @@ msiexec /i "C:\TOOLS2\winfsp.msi" /q
 pip install tqdm
 pip install requests
 
+
+<# DOWNLOAD RESOLUTION-SETUP FILES #>
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/NtoKid/hgfj03efd/main/filed/wall.py" -OutFile C:\res\wall.py
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/NtoKid/hgfj03efd/main/filed/wall.bat" -OutFile C:\res\wall.bat
+
 <# START TOTAL COMMANDER #>
+Start-Process -FilePath "C:\res\wall.bat"
 Start-Process -FilePath "C:\TOTAL\TOTALCMD.exe" -WindowStyle Minimized
+
+
