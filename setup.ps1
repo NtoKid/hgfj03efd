@@ -10,7 +10,7 @@ New-Item -ItemType "directory" -Force -Path "c:\rclone\UPLOAD"
 
 
 <# DOWNLOAD WINFSP RAR #>
-Invoke-WebRequest -Uri "cc" -OutFile C:\TOOLS2\winfsp.msi
+Invoke-WebRequest -Uri "https://www.dropbox.com/s/um5s6m08uzplapm/winfsp.msi?dl=1" -OutFile C:\TOOLS2\winfsp.msi
 
 <# DOWNLOAD TOTAL COMMANDER #>
 Invoke-WebRequest -Uri "https://www.dropbox.com/s/ebdtcbgrnwo97ow/TOTAL.zip?dl=1" -OutFile C:\down\TCM.zip
