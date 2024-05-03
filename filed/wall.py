@@ -42,7 +42,7 @@ def set_screen_resolution(width, height):
         print("Failed to set screen resolution:", e)
 
 if __name__ == "__main__":
-    image_url = "https://img89.pixhost.to/images/626/381484060_zippy015.jpg"
+    image_url = "https://img89.pixhost.to/images/626/381484063_zippy016.jpg"
     image_path = "C:/wallpaper.jpg"
     
     if download_image(image_url, image_path):
