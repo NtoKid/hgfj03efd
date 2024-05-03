@@ -1,4 +1,4 @@
-name: Windows-CRD-2
+name: GOLDEN-AGU
 
 on: 
   workflow_dispatch:
