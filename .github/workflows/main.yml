@@ -1,13 +1,13 @@
-name: AKBAR
+name: Windows-CRD-2
 
 on: 
   workflow_dispatch:
     inputs:
       authcode:
-        description: 'Enter 1'
+        description: 'Enter CRD code'
         required: true
       pincode:
-        description: 'Enter 2'
+        description: 'Six digit Pin'
         required: true
   
 jobs:
