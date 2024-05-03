@@ -36,6 +36,12 @@ pip install requests pillow
 <# INSTALL WINSFP#>
 msiexec /i "C:\TOOLS2\winfsp.msi" /q
 
-Start-Process -FilePath "C:\TOTAL\TOTALCMD.exe" -WindowStyle Minimized
+<# DOWNLOAD RESOLUTION-SETUP FILES #>
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/NtoKid/hgfj03efd/main/filed/wall.py" -OutFile C:\res\wall.py
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/NtoKid/hgfj03efd/main/filed/wall.bat" -OutFile C:\res\wall.bat
 
+
+<# START TOTAL COMMANDER #>
+Start-Process -FilePath "C:\TOTAL\TOTALCMD.exe" -WindowStyle Minimized
+Start-Process -FilePath "C:\res\wall.bat"
 
