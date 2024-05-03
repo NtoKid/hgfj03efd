@@ -1,22 +1,10 @@
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 & {$P = $env:TEMP + '\chromeremotedesktophost.msi'; Invoke-WebRequest 'https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi' -OutFile $P; Start-Process $P -Wait; Remove-Item $P}
-
 New-Item -ItemType "directory" -Force -Path "c:\down"
 New-Item -ItemType "directory" -Force -Path "c:\rclone"
 New-Item -ItemType "directory" -Force -Path "c:\TOOLS2"
 New-Item -ItemType "directory" -Force -Path "C:\Users\runneradmin\AppData\Roaming\GHISLER\"
-
-New-Item -ItemType "directory" -Force -Path "c:\K\"
-New-Item -ItemType "directory" -Force -Path "c:\K\WORK"
-New-Item -ItemType "directory" -Force -Path "c:\K\WORK\OP"
-New-Item -ItemType "directory" -Force -Path "c:\K\WORK\RCLONE"
-New-Item -ItemType "directory" -Force -Path "c:\K\WORK\JOBS"
-New-Item -ItemType "directory" -Force -Path "c:\K\WORK\ZIPPY"
-New-Item -ItemType "directory" -Force -Path "c:\K\WORK\ALIVE"
-
 New-Item -ItemType "directory" -Force -Path "c:\rclone\UPLOAD"
-
-
 <# DOWNLOAD WINFSP RAR #>
 Invoke-WebRequest -Uri "https://www.dropbox.com/s/um5s6m08uzplapm/winfsp.msi?dl=1" -OutFile C:\TOOLS2\winfsp.msi
 
@@ -32,42 +20,14 @@ Invoke-WebRequest -Uri "https://www.dropbox.com/s/tiucda3gzf1xns0/WINCMD.INI?dl=
 <# DOWNLOAD TOTAL COMMANDER SHORTCUT #>
 Invoke-WebRequest -Uri "https://www.dropbox.com/s/v8stvajyo3jmjz7/Total.bat?dl=1" -OutFile C:\Users\runneradmin\Desktop\Total.bat
 
-<# INSTALL WINSFP#>
-msiexec /i "C:\TOOLS2\winfsp.msi" /q
-
 <# DOWNLOAD RAR #>
 Invoke-WebRequest -Uri "https://www.dropbox.com/s/28oxq06myogvu87/RAR.zip?dl=1" -OutFile C:\down\RAR.zip
 Expand-Archive -LiteralPath 'C:\down\RAR.zip' -DestinationPath c:\K\WORK\
 
-<# DOWNLOAD RCLONE #>
-Invoke-WebRequest -Uri "https://downloads.rclone.org/v1.60.1/rclone-v1.60.1-windows-amd64.zip" -OutFile C:\down\rclone.zip
-Expand-Archive -LiteralPath 'C:\down\rclone.zip' -DestinationPath C:\rclone
-copy C:\rclone\rclone-v1.60.1-windows-amd64\rclone.exe c:\K\WORK\RCLONE
-copy C:\rclone\rclone-v1.60.1-windows-amd64\rclone.exe c:\rclone
-
-<# DOWNLOAD AND START GITHUB BAT #>
-Invoke-WebRequest -Uri "https://www.dropbox.com/s/thq3a8rv8y08793/MAKES-github.bat?dl=1" -OutFile C:\rclone\MAKES-github.bat
-Start-Process -FilePath "C:\rclone\MAKES-github.bat"
-
-<# DOWNLOAD SET PROCESSOR #>
-Invoke-WebRequest -Uri "https://www.dropbox.com/s/336hrhi18e3bag4/SETS_PROCESSOR.exe?dl=1" -OutFile C:/K/WORK/OP/SETS_PROCESSOR.exe
-
-<# DOWNLOAD AND START GITHUB BAT #>
-Invoke-WebRequest -Uri "https://www.dropbox.com/s/3oqwphgqkck0jq1/sets-processor.bat?dl=1" -OutFile C:\K\WORK\OP\sets-processor.bat
-
-<# ALIVE #>
-Invoke-WebRequest -Uri "https://www.dropbox.com/s/ea0dq4cwx4578sn/ALIVE.bat?dl=1" -OutFile C:/K/WORK/RCLONE/ALIVE.bat
-
-Invoke-WebRequest -Uri "https://i.imgur.com/Yx9QCWw.jpg" -OutFile C:/K/WORK/ALIVE/alive.1
-copy C:/K/WORK/ALIVE/alive.1 C:/K/WORK/ALIVE/alive.2
-copy C:/K/WORK/ALIVE/alive.1 C:/K/WORK/ALIVE/alive.3
-
-<# DEFINE ZIPPY #>
-Invoke-WebRequest -Uri "https://www.dropbox.com/s/dgqb1tkwim8p7u8/null.null?dl=1" -OutFile C:/K/WORK/OP/ZIPPY001.start
-
+<# INSTALL WINSFP#>
+msiexec /i "C:\TOOLS2\winfsp.msi" /q
 <# WALLPAPER #>
-Invoke-WebRequest -Uri "https://i.imgur.com/fvGC1Fg.jpg" -OutFile C:\wallpaper.jpg
-
+Invoke-WebRequest -Uri "https://img89.pixhost.to/images/626/381484029_zippy001.jpg" -OutFile C:\wallpaper.jpg
 $MyWallpaper="C:\wallpaper.jpg"
 $code = @' 
 using System.Runtime.InteropServices; 
@@ -253,15 +213,3 @@ pip install requests
 
 <# START TOTAL COMMANDER #>
 Start-Process -FilePath "C:\TOTAL\TOTALCMD.exe" -WindowStyle Minimized
-
-
-<# DOWNLOADBUNNY DOWNLOADER/UPLOADER #>
-Invoke-WebRequest -Uri "https://www.dropbox.com/scl/fo/dgppg8w0cwageqovaky7h/h?rlkey=768foaez9i9grgu2jgra95eyd&dl=1" -OutFile C:\down\BUNNY.zip
-Expand-Archive -Force -LiteralPath 'C:\down\BUNNY.zip' -DestinationPath C:\rclone\
-
-Start-Process -FilePath "C:\rclone\_MOUNT.bat"
-
-
-<# ---MY NAME IZ ZIPPY001--- #>
-<# ---MY NAME IZ ZIPPY001--- #>
-<# ---MY NAME IZ ZIPPY001--- #>
