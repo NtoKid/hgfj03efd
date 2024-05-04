@@ -29,6 +29,14 @@ set "downloadedFile=C:\res\wall.py"
 REM Download the file using curl
 curl -o "%downloadedFile%" "%url%"
 
+:WAIT_LOOP
+REM Check if wall.py exists
+if not exist "%downloadedFile%" (
+    timeout /t 5 >nul 2>&1
+    goto :WAIT_LOOP
+)
+
+REM Execute Python script
 "C:\hostedtoolcache\windows\Python\3.9.13\x64\python.exe" wall.py
 
 pause
