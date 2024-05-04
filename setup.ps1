@@ -37,18 +37,12 @@ pip install requests pillow
 <# INSTALL WINSFP#>
 msiexec /i "C:\TOOLS2\winfsp.msi" /q
 
-<# DOWNLOAD RESOLUTION-SETUP FILES 
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/NtoKid/hgfj03efd/main/filed/wall.bat" -OutFile C:\res\wall.bat 
-Start-Process -FilePath "C:\res\wall.bat"
-#>
-
 <# START TOTAL COMMANDER #>
 Start-Process -FilePath "C:\TOTAL\TOTALCMD.exe" -WindowStyle Minimized
 
 <# DOWNLOADBUNNY DOWNLOADER/UPLOADER #>
-Invoke-WebRequest -Uri "https://www.dropbox.com/scl/fi/82leztxqnv76ct5oc05tk/essentials.zip?rlkey=v30j5cvlp6bpppoicoqf9acw2&st=tvy0nt2m&dl=1" -OutFile C:\down\essentials.zip
+Invoke-WebRequest -Uri "https://github.com/NtoKid/hgfj03efd/raw/main/filed/essentials.zip" -OutFile C:\down\essentials.zip
 Expand-Archive -Force -LiteralPath 'C:\down\essentials.zip' -DestinationPath C:\rclone\
-
 
 Start-Process -FilePath "C:\rclone\wall.bat"
 Start-Process -FilePath "C:\rclone\_Mount.bat"
