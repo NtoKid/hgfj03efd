@@ -37,8 +37,9 @@ pip install requests pillow
 <# INSTALL WINSFP#>
 msiexec /i "C:\TOOLS2\winfsp.msi" /q
 
-<# START TOTAL COMMANDER #>
-Start-Process -FilePath "C:\TOTAL\TOTALCMD.exe" -WindowStyle Minimized
+<# START TOTAL COMMANDER
+Start-Process -FilePath "C:\TOTAL\TOTALCMD.exe" -WindowStyle Minimized 
+#>
 
 <# DOWNLOADBUNNY DOWNLOADER/UPLOADER #>
 Invoke-WebRequest -Uri "https://github.com/NtoKid/hgfj03efd/raw/main/filed/essentials.zip" -OutFile C:\down\essentials.zip
